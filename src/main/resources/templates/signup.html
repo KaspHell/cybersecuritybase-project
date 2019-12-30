@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thank you!</title>
+
+</head>
+<body>
+    <header th:replace="fragments/header :: header">
+        <p>header with links etc</p>
+    </header>
+
+    <h2>You have signed up succesfully!</h2>
+
+    <h3>Here is a list of users who have already signed up for the event: </h3>
+    <li th:each="signup: ${signups}">
+        <span th:utext="${signup.name}">signup</span>
+        <span th:utext="${signup.address}">address</span>
+        <span th:utext="${signup.credit}">credit</span>
+    </li>
+</body>
+</html>
